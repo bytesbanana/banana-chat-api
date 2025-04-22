@@ -2,14 +2,16 @@
   "name": "api",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/main.ts",
+    "dev": "tsx watch src/index.ts",
     "build": "tsc",
     "lint": "eslint .",
-    "start": "node dist/main.js"
+    "start": "node dist/index.js"
   },
   "dependencies": {
     "@hono/node-server": "^1.14.1",
-    "hono": "^4.7.7"
+    "@hono/zod-openapi": "^0.19.5",
+    "hono": "^4.7.7",
+    "stoker": "^1.4.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.12.0",

@@ -1,15 +1,5 @@
+import app from "@/app";
 import { serve } from "@hono/node-server";
-import { Hono } from "hono";
-
-const app = new Hono();
-
-app.get("/", (c) => {
-  return c.text("Hello Hono!");
-});
-
-app.get("/api/healthcheck", (c) => {
-  return c.json({ status: "OK" });
-});
 
 serve(
   {
@@ -17,6 +7,7 @@ serve(
     port: 3000,
   },
   (info) => {
+    // eslint-disable-next-line no-console
     console.log(`Server is running on http://localhost:${info.port}`);
   },
 );
